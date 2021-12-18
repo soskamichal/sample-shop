@@ -76,7 +76,4 @@ export default {
     width: 100%;
     height: auto;
   }
-  .container {
-
-  }
 </style>

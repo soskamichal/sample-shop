@@ -4,23 +4,18 @@
       <h3 class="md-title">Sample Shop</h3>
     </md-toolbar>
     <category-selection/>
-    <product-list/>
-    <pagination/>
+    <router-view/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import CategorySelection from '../components/CategorySelection.vue'
-import Pagination from '../components/Pagination.vue'
-import ProductList from '../components/ProductList.vue'
 
 export default {
   name: 'Home',
   components: {
-    CategorySelection,
-    ProductList,
-    Pagination
+    CategorySelection
   }
 }
 </script>

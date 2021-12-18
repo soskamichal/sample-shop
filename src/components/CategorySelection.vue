@@ -1,13 +1,17 @@
 <template>
   <div>
-    <md-menu v-for="category in categories" :key=category.uid md-size="medium" md-align-trigger>
-      <md-button md-menu-trigger>{{ category.name }}</md-button>
-      <md-menu-content v-if="(category.children.length > 0)">
-        <md-menu-item v-for="subcategory in category.children" :key=subcategory.uid >
-          <md-button @click="selectCategory(subcategory)">{{ subcategory.name }}</md-button>
-        </md-menu-item>
-      </md-menu-content>
-    </md-menu>
+    <div class="container">
+      <div v-for="category in categories" :key=category.uid>
+        <div class="dropdown">
+          <md-button @click="selectCategory(category)">{{ category.name }}</md-button>
+          <div class="dropdown-content" v-if="(category.children.length > 0)">
+            <div v-for="subcategory in category.children" :key=subcategory.uid >
+              <md-button @click="selectCategory(subcategory)">{{ subcategory.name }}</md-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -103,8 +107,30 @@ export default {
   },
   methods: {
     selectCategory (category) {
-      console.log('selected category', category)
+      this.$router.push(`/category/${category.name}/1`)
     }
   }
 }
 </script>
+
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2; /*ew*/
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>

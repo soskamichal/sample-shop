@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import EmptyState from '../views/EmptyState.vue'
+import ProductView from '../views/ProductView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: '/',
+        name: 'Home',
+        component: EmptyState
+      },
+      {
+        path: '/category/:category/:page',
+        component: ProductView
+      }
+    ]
   }
 ]
 
