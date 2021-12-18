@@ -5,19 +5,22 @@
     </md-toolbar>
     <category-selection/>
     <product-list/>
+    <pagination/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import CategorySelection from '../components/CategorySelection.vue'
+import Pagination from '../components/Pagination.vue'
 import ProductList from '../components/ProductList.vue'
 
 export default {
   name: 'Home',
   components: {
     CategorySelection,
-    ProductList
+    ProductList,
+    Pagination
   }
 }
 </script>
