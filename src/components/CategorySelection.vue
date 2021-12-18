@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-menu v-for="category in categories" :key=category.uid md-size="medium">
+    <md-menu v-for="category in categories" :key=category.uid md-size="medium" md-align-trigger>
       <md-button md-menu-trigger>{{ category.name }}</md-button>
       <md-menu-content v-if="(category.children.length > 0)">
         <md-menu-item v-for="subcategory in category.children" :key=subcategory.uid >
