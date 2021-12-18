@@ -1,10 +1,14 @@
 import Vue from 'vue'
+import { MdMenu, MdButton } from 'vue-material/dist/components'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
-
+Vue.use(MdMenu)
+Vue.use(MdButton)
 new Vue({
   router,
   store,
