@@ -26,12 +26,12 @@ export default {
   async created () {
     await this.fetchCategories()
     this.categories = this.$store.state.categories
-    console.log(this.categories)
   },
   methods: {
-    ...mapActions(['fetchCategories']),
+    ...mapActions(['fetchCategories', 'setCurrentCategory']),
     selectCategory (category) {
-      this.$router.push(`/category/${category.name}/1`)
+      this.setCurrentCategory(category.uid)
+      this.$router.push({ path: `/category/${category.name}`, query: { page: 1 } })
     }
   }
 }

@@ -11,17 +11,14 @@
 
 <script>
 export default {
-  data () {
-    return {
-      maxPage: 10,
-      currentPage: 2
-    }
-  },
+  props: ['currentPage', 'maxPage'],
   computed: {
     numbersDisplay: function () {
       const numbers = [this.currentPage]
       if (this.currentPage === 1) {
-        numbers.push(this.currentPage + 1)
+        if (this.maxPage !== 1) {
+          numbers.push(this.currentPage + 1)
+        }
         if (this.maxPage > 2) {
           numbers.push(this.currentPage + 2)
         }
@@ -39,7 +36,9 @@ export default {
   },
   methods: {
     changePage: function (page) {
-      this.currentPage = page
+      if (page !== this.currentPage) {
+        this.$emit('changeCurrentPage', page)
+      }
     }
   }
 }

@@ -17,7 +17,7 @@ const routes = [
         component: EmptyState
       },
       {
-        path: '/category/:category/:page',
+        path: '/category/:category',
         component: ProductView
       }
     ]
