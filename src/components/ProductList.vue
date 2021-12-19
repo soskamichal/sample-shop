@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <md-card v-for="(product, key) in products" :key=key>
         <md-card-media>
           <img :src=product.image.url :alt=product.image.label>
@@ -21,6 +21,12 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 1 1 0px;
+  }
   .md-card {
     width: 320px;
     margin: 4px;

@@ -37,6 +37,7 @@ export default {
   methods: {
     changePage: function (page) {
       if (page !== this.currentPage) {
+        window.scrollTo(0, 0)
         this.$emit('changeCurrentPage', page)
       }
     }
