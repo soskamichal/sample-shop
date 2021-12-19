@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { MdMenu, MdButton, MdCard, MdToolbar, MdIcon, MdEmptyState } from 'vue-material/dist/components'
+import { MdMenu, MdButton, MdCard, MdToolbar, MdIcon, MdEmptyState, MdDrawer, MdList } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import App from './App.vue'
@@ -13,6 +13,8 @@ Vue.use(MdCard)
 Vue.use(MdToolbar)
 Vue.use(MdIcon)
 Vue.use(MdEmptyState)
+Vue.use(MdDrawer)
+Vue.use(MdList)
 new Vue({
   router,
   store,

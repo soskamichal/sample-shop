@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <md-toolbar class="md-dense primary">
+    <md-toolbar class="md-dense primary toolbar">
       <h3 class="md-title">Sample Shop</h3>
     </md-toolbar>
     <category-selection/>
@@ -19,3 +19,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media only screen and (max-width: 1024px) {
+  .toolbar {
+    display: none
+  }
+}
+</style>
