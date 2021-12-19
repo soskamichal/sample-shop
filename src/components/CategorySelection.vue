@@ -24,7 +24,7 @@
 
     <md-drawer :md-active.sync="showNavigation" md-swipeable>
       <md-toolbar class="md-transparent" md-elevation="0">
-        <span class="md-title">Sample shop</span>
+        <span class="md-title">Sample shop menu</span>
       </md-toolbar>
 
       <md-list :md-expand-single="expandSingle">

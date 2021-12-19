@@ -77,7 +77,6 @@ export default new Vuex.Store({
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data)
           commit('setProducts', data)
         })
     }
